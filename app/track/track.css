@@ -1,0 +1,36 @@
+.trk { max-width: 560px; margin: 0 auto; padding: 16px 16px 40px; display: grid; gap: 14px; }
+.trk-head { display: flex; justify-content: center; padding: 8px 0; }
+.trk-head a { color: inherit; }
+.trk-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+.trk-card h1 { font-size: 1.4rem; margin-bottom: 4px; }
+.trk-card > p { color: var(--muted); font-size: .92rem; }
+.trk-form { display: flex; gap: 8px; margin-top: 14px; }
+.trk-form input { flex: 1; min-width: 0; padding: 13px 16px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--bg-2); color: var(--text); font: inherit; font-size: 1.05rem; letter-spacing: 1px; }
+.trk-form input:focus { outline: none; border-color: var(--primary); }
+.trk-form .btn { padding: 12px 22px; animation: none; }
+.trk-err { color: var(--red) !important; margin-top: 8px; }
+.trk-empty { text-align: center; display: grid; gap: 14px; justify-items: center; }
+.trk-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.trk-top b { font-family: monospace; font-size: 1.05rem; color: var(--gold-2); }
+.trk-top small { color: var(--muted); }
+.trk-prod { margin: 8px 0 14px; font-size: .95rem; }
+.trk-prod b { color: var(--gold-2); }
+.trk-steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); position: relative; margin: 6px 0 12px; }
+.trk-steps::before, .trk-steps::after { content: ""; position: absolute; top: 19px; left: 12.5%; height: 4px; border-radius: 4px; }
+.trk-steps::before { right: 12.5%; background: var(--line); }
+.trk-steps::after { width: calc(75% * var(--done) / 3); background: linear-gradient(90deg, var(--green), var(--gold)); }
+.trk-steps li { position: relative; z-index: 1; display: grid; justify-items: center; gap: 6px; text-align: center; }
+.trk-steps li span { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-size: 1.15rem; background: var(--bg-2); border: 2px solid var(--line); color: var(--muted); }
+.trk-steps li.done span { background: #064e3b; border-color: var(--green); }
+.trk-steps li.now span { background: linear-gradient(135deg, var(--primary), var(--primary-2)); border-color: var(--gold); box-shadow: 0 0 0 6px rgba(139, 92, 246, .25); animation: trk-pulse 1.6s ease-in-out infinite; }
+.trk-steps li small { font-size: .72rem; color: var(--muted); }
+.trk-steps li.done small, .trk-steps li.now small { color: var(--text); font-weight: 600; }
+@keyframes trk-pulse { 50% { box-shadow: 0 0 0 11px rgba(139, 92, 246, 0); } }
+.trk-msg { background: var(--bg-2); border-radius: 12px; padding: 10px 12px; font-size: .9rem; line-height: 1.5; }
+.trk-ended { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+.trk-order.ended { opacity: .8; }
+.trk-courier { display: block; margin-top: 10px; text-align: center; padding: 11px; border-radius: 999px; border: 1.5px solid var(--gold); color: var(--gold-2); font-weight: 600; }
+.trk-help { text-align: center; color: var(--muted); display: grid; gap: 10px; }
+.trk-help div { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.trk-help-btn { padding: 10px 20px; border-radius: 999px; border: 1.5px solid var(--line); color: var(--text); font-weight: 600; }
+.trk-help-btn.wa { border-color: #25d366; color: #4ade80; }

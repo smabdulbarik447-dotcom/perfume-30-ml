@@ -1,0 +1,17 @@
+.rv-page { max-width: 520px; margin: 0 auto; padding: 18px 16px 40px; display: grid; gap: 16px; }
+.rv-page header { display: flex; justify-content: center; }
+.rv-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px; text-align: center; }
+.rv-card h1 { font-size: 1.4rem; margin-bottom: 6px; }
+.rv-prod { color: var(--muted); font-size: .92rem; }
+.rv-form { display: grid; gap: 12px; margin-top: 16px; }
+.rv-stars { display: flex; justify-content: center; gap: 6px; }
+.rv-stars button { background: none; border: 0; font-size: 2.6rem; line-height: 1; color: var(--line); cursor: pointer; transition: transform .15s, color .15s; }
+.rv-stars button.on { color: var(--gold); text-shadow: 0 0 14px rgba(245, 196, 81, .5); }
+.rv-stars button:active { transform: scale(1.25); }
+.rv-label { font-weight: 700; color: var(--gold-2); min-height: 1.4em; }
+.rv-form textarea { width: 100%; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--bg-2); color: var(--text); font: inherit; resize: vertical; }
+.rv-form textarea:focus { outline: none; border-color: var(--primary); }
+.rv-err { color: var(--red); }
+.rv-thanks { display: grid; gap: 10px; justify-items: center; }
+.rv-thanks > span { font-size: 3rem; }
+.rv-thanks p { color: var(--muted); }
