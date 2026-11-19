@@ -19,11 +19,11 @@ export const site = {
   ],
 
   gallery: [
-    "/images/main.jpeg",
-    "/images/combo.png",
+    "/images/main.webp",
+    "/images/combo.webp",
     "/images/hawas-ice.avif",
     "/images/sauvage.avif",
-    "/images/hawas-fire.webp",
+    "/images/hawas-fire-sm.webp",
     "/images/vampire-blood.avif",
   ],
 
@@ -71,7 +71,7 @@ export const site = {
       badge: "এলিগেন্ট, উডি ও ক্লাসি",
       subtitle: "অফিস, ডেট বা যেকোনো ইভেন্টে অনন্য আভিজাত্য",
       description: "ফ্রেশ সাইট্রাস আর উডি সুবাসের ক্লাসি কম্বিনেশন! যেকোনো কর্পোরেট বা ইভেন্টে অনন্য আভিজাত্য।",
-      image: "/images/combo.png",
+      image: "/images/combo.webp",
       vibe: "ক্লাসি, ফ্রেশ ও আত্মবিশ্বাসী",
       notes: ["গ্রেপফ্রুট", "আদা", "জুঁই", "চন্দন ও সিডারউড"],
     },

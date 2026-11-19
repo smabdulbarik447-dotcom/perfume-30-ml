@@ -13,7 +13,7 @@ export default function Collection({ perfumes, text }) {
         {perfumes.map((item, i) => (
           <button key={i} className={`ex-card ${i === index ? "active" : ""}`} onClick={() => setIndex(i)}>
             <div className="ex-img">
-              <img src={item.image} alt={item.name} />
+              <img src={item.image} alt={item.name} loading="lazy" decoding="async" />
             </div>
             <span className="ex-badge">{item.badge}</span>
             <h3>{item.short}</h3>
@@ -24,7 +24,7 @@ export default function Collection({ perfumes, text }) {
 
       <div className="spotlight">
         <div className="spot-img">
-          <img key={p.image} src={p.image} alt={p.name} />
+          <img key={p.image} src={p.image} alt={p.name} loading="lazy" decoding="async" />
           <span className="spot-vol">{text.col_volume}</span>
         </div>
         <div className="spot-body">

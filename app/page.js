@@ -48,7 +48,7 @@ export default async function Home() {
   const L = content.lists;
   const fill = (str) => fillTokens(str, vars);
   // Mul product er chobi i upore boro kore dekhay, tarpor banner er chobi gulo
-  const productImage = main.image || "/images/combo.png";
+  const productImage = main.image || "/images/combo.webp";
   const banners = s.gallery.split("\n").map((x) => x.trim()).filter(Boolean);
   const gallery = [productImage, ...banners.filter((src) => src !== productImage)];
   const freeBoxes = Number(s.free_delivery_boxes) || 0;
@@ -65,7 +65,7 @@ export default async function Home() {
   );
   const perfumes = L.perfumes.map((p, i) => ({
     ...p,
-    image: p.image || site.perfumes[i]?.image || "/images/combo.png",
+    image: p.image || site.perfumes[i]?.image || "/images/combo.webp",
     notes: String(p.notes || "").split(",").map((x) => x.trim()).filter(Boolean),
   })).filter((p) => p.name || p.short);
 
@@ -134,7 +134,7 @@ export default async function Home() {
               </div>
 
               <div className="gift-note">
-                <img src={content.text.gift_image || "/images/hawas-fire.webp"} alt="Free gift" />
+                <img src={content.text.gift_image || "/images/hawas-fire-sm.webp"} alt="Free gift" loading="lazy" decoding="async" />
                 <div>
                   <b>{t("gift_title")}</b>
                   <p>{t("gift_sub")}</p>
@@ -172,7 +172,7 @@ export default async function Home() {
       <section className="section alt">
         <div className="container gift-grid">
           <div className="gift-img">
-            <img src={content.text.gift_image || "/images/hawas-fire.webp"} alt="Free gift" />
+            <img src={content.text.gift_image || "/images/hawas-fire-sm.webp"} alt="Free gift" loading="lazy" decoding="async" />
           </div>
           <div>
             <span className="eyebrow">{t("gift_eyebrow")}</span>
@@ -195,7 +195,7 @@ export default async function Home() {
           <div className="compare">
             <div className="compare-col good">
               <div className="compare-head">
-                <img src="/images/hawas-ice.avif" alt={t("good_title")} />
+                <img src="/images/hawas-ice.avif" alt={t("good_title")} loading="lazy" decoding="async" />
                 <div>
                   <small>{t("good_small")}</small>
                   <h3>{t("good_title")}</h3>
@@ -244,7 +244,7 @@ export default async function Home() {
 
           <div className="package-card">
             <div className="package-img">
-              <img src={productImage} alt={t("pkg_name")} />
+              <img src={productImage} alt={t("pkg_name")} loading="lazy" decoding="async" />
             </div>
             <div className="package-body">
               <h3>{t("pkg_name")}</h3>

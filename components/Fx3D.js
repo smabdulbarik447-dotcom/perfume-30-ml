@@ -9,6 +9,8 @@ const MAX = { ".gallery-main": 10, ".package-card": 6, ".cod-banner": 5, ".compa
 export default function Fx3D() {
   useEffect(() => {
     if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    // Tilt shudhu mouse e — mobile e angul diye scroll korar shomoy card ghurle lag lage
+    if (!window.matchMedia?.("(hover: hover) and (pointer: fine)").matches) return;
     const els = TILT.flatMap((sel) => [...document.querySelectorAll(sel)].map((el) => [el, MAX[sel] || 12]));
     const offs = [];
     for (const [el, max] of els) {
@@ -38,15 +40,7 @@ export default function Fx3D() {
       el.addEventListener("pointercancel", leave);
       offs.push(() => { el.removeEventListener("pointermove", move); el.removeEventListener("pointerleave", leave); el.removeEventListener("pointercancel", leave); });
     }
-    // Scroll korle pichoner alo-r bubble halka upore-niche shore (gobhirota bojha jay)
-    const bg = document.querySelector(".bg3d");
-    let sraf = 0;
-    const onScroll = () => {
-      cancelAnimationFrame(sraf);
-      sraf = requestAnimationFrame(() => bg?.style.setProperty("--sy", `${window.scrollY}px`));
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => { offs.forEach((f) => f()); window.removeEventListener("scroll", onScroll); };
+    return () => offs.forEach((f) => f());
   }, []);
 
   // Pichoner bhasha alo/bubble (fixed layer, click nay na)

@@ -19,7 +19,7 @@ export default function Gallery({ images, brand, badge = "🎁 +১টি ১৫
             onClick={() => setActive(active === i + 1 ? 0 : i + 1)}
             aria-label={`Thumb ${i + 1}`}
           >
-            <img src={src} alt="" />
+            <img src={src} alt="" loading="lazy" decoding="async" />
           </button>
         ))}
       </div>

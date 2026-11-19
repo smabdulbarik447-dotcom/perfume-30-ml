@@ -179,3 +179,34 @@ html, body { overflow-x: clip; }
   0% { background-position: 100% 0; }
   55%, 100% { background-position: 0 0; }
 }
+
+/* =========================================================
+   Performance — scroll lag komano (dekhte prai ek-i, kintu GPU/repaint onek kom)
+   Shob shomoy chola box-shadow / text-shadow / filter animation protita frame e notun kore aka lage — egulo bad/halka
+   ========================================================= */
+.header { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(11, 7, 20, .96); }
+.t3d { will-change: auto; }
+.t3d.t3d-on { will-change: transform; }
+
+/* Pichoner bubble: blur bad (gradient nijei naram), scroll e nore na */
+.bg3d i { filter: none; transform: none; will-change: transform; }
+@media (max-width: 768px) {
+  .bg3d i:nth-child(n+5) { display: none; }
+}
+
+/* Heading: 3 stor er drop-shadow filter bad; shine shudhu hero heading e */
+.hero-info h1.hero-title, .section-head h2 { filter: none; }
+.section-head h2 { animation: none; background-position: 50% 0; }
+
+/* Glow animation gulo → sthir glow / shudhu transform (GPU te sosta) */
+.price-card { animation: none; box-shadow: 0 0 0 1px rgba(245, 196, 81, .45), 0 0 26px rgba(245, 196, 81, .2); }
+.ex-card.active { animation: none; box-shadow: 0 0 0 1px rgba(245, 196, 81, .55), 0 0 26px rgba(245, 196, 81, .22); }
+@keyframes s-beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+.price-new { animation: s-beat 2.2s ease-in-out infinite; text-shadow: 0 0 14px rgba(245, 196, 81, .45); }
+.float-wa { animation: none; }
+.float-wa::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: 0 0 0 10px rgba(37, 211, 102, .45);
+  animation: s-ring 1.8s ease-out infinite;
+}
+@keyframes s-ring { from { transform: scale(.8); opacity: 1; } to { transform: scale(1.35); opacity: 0; } }

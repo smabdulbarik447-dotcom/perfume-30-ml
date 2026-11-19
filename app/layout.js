@@ -10,7 +10,7 @@ const IMG_FALLBACK =
   "if(!/blob\\.vercel-storage\\.com/.test(i.currentSrc||i.src))return;i.dataset.fb='1';" +
   "if(i.classList.contains('brand-logo')){var t=document.createElement('b');t.className='brand-text';t.textContent=i.alt||'';i.replaceWith(t);return}" +
   "var th=i.closest('.gallery-thumbs button');if(th){th.style.display='none';return}" +
-  "if(i.closest('.gallery,.package-img,.packages,.spot-img,.ex-card')){i.removeAttribute('srcset');i.src='/images/combo.png';return}" +
+  "if(i.closest('.gallery,.package-img,.packages,.spot-img,.ex-card')){i.removeAttribute('srcset');i.src='/images/combo.webp';return}" +
   "i.style.display='none'},true);";
 
 export default function RootLayout({ children }) {
