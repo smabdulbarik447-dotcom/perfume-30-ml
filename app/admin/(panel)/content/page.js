@@ -66,7 +66,12 @@ export default async function ContentPage() {
           <summary><h3>{sec.title}</h3></summary>
           <SaveForm action={saveContentAction}>
             <div className="content-grid">
-              {sec.fields.map(([k, label, , long]) => (
+              {sec.fields.map(([k, label, , long]) => long === "image" ? (
+                <div key={k} className="content-img wide">
+                  {label}
+                  <ImageInput name={`t.${k}`} defaultValue={text[k] || ""} folder="products" />
+                </div>
+              ) : (
                 <label key={k} className={long ? "wide" : ""}>
                   {label}
                   {long ? (
