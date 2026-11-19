@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function Gallery({ images, brand, badge = "🎁 +১টি ৬মিলি আতর ফ্রি" }) {
+export default function Gallery({ images, brand, badge = "🎁 +১টি ১৫ মিলি পারফিউম ফ্রি" }) {
   const [active, setActive] = useState(0);
   if (!images.length) return null;
   return (

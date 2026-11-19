@@ -134,7 +134,7 @@ export default async function Home() {
               </div>
 
               <div className="gift-note">
-                <img src="/images/gift.webp" alt="Secret Perfume 6ml" />
+                <img src="/images/hawas-fire.webp" alt="Hawas Fire 15ml" />
                 <div>
                   <b>{t("gift_title")}</b>
                   <p>{t("gift_sub")}</p>
@@ -172,7 +172,7 @@ export default async function Home() {
       <section className="section alt">
         <div className="container gift-grid">
           <div className="gift-img">
-            <img src="/images/gift.webp" alt="Secret Perfume 6ml" />
+            <img src="/images/hawas-fire.webp" alt="Hawas Fire 15ml" />
           </div>
           <div>
             <span className="eyebrow">{t("gift_eyebrow")}</span>
