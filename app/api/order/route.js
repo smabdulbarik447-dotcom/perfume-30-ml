@@ -60,8 +60,11 @@ export async function POST(req) {
       VALUES (${name}, ${body.phone}, ${address}, ${product.name}, ${area.id}, ${qty}, ${total}, ${ip},
               ${fbp}, ${fbc}, ${userAgent}, ${pageUrl})
       RETURNING id`;
-    await sql`UPDATE products SET stock = GREATEST(stock - ${qty}, 0) WHERE id = ${product.id}`;
-    await sql`DELETE FROM incomplete_orders WHERE phone = ${body.phone}`;
+    // Stock komano ar incomplete muche fela ek shathe (customer ke kom opekkha)
+    await Promise.all([
+      sql`UPDATE products SET stock = GREATEST(stock - ${qty}, 0) WHERE id = ${product.id}`,
+      sql`DELETE FROM incomplete_orders WHERE phone = ${body.phone}`,
+    ]);
     revalidatePath("/admin", "layout");
     // Customer ke wait na koriye Telegram e pathay. BD Courier tokhon uttor na dile pore abar dekhi —
     // rating kom hole order nije theke বাতিল (kom rating er order kono bhabei chole na)
